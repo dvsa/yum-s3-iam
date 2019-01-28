@@ -1,3 +1,6 @@
+## 1.3.0 (2019-01-28)
+- #2: Don't retry 404 errors
+
 ## 1.2.2 (2017-09-06)
 - #59: Handle special value '__none__' for proxy (@andlam)
 
