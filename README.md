@@ -76,12 +76,13 @@ Apache 2.0 license. See LICENSE.
 
 ## Maintainers
 
-- Mathias Brossard
-- Mischa Spiegelmock
-- Sean Edge
+- DVSA Platform Team
 
 ## Author(s)
 
-- Julius Seporaitis
+- Mathias Brossard
+- Mischa Spiegelmock
+- Sean Edge
+- [Julius Seporaitis](https://github.com/seporaitis/yum-s3-iam/)
 - [Robert Melas' code](https://github.com/rmela/yum-s3-plugin/) was
   used as a reference. See NOTICE.
