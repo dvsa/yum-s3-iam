@@ -37,6 +37,9 @@ rm -rf ${RPM_BUILD_ROOT}
 /usr/lib/yum-plugins/s3iam.py*
 
 %changelog
+* Mon Jan 29 2019 Callum Massey <callum.massey@bjss.com> 1.3.1-1
+- Fix test cases
+
 * Mon Jan 28 2019 Callum Massey <callum.massey@bjss.com> 1.3.0-1
 - Don't retry 404 errors 
 
