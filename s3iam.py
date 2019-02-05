@@ -45,6 +45,7 @@ plugin_type = yum.plugins.TYPE_CORE
 CONDUIT = None
 DEFAULT_DELAY = 3
 DEFAULT_BACKOFF = 2
+DEFAULT_REQUEST_TIMEOUT = 4
 BUFFER_SIZE = 1024 * 1024
 OPTIONAL_ATTRIBUTES = ['priority', 'base_persistdir', 'metadata_expire',
                        'skip_if_unavailable', 'keepcache', 'priority']
@@ -235,7 +236,7 @@ class S3Grabber(object):
             ))
 
         try:
-            response = urllib2.urlopen(request)
+            response = urllib2.urlopen(request, timeout = DEFAULT_REQUEST_TIMEOUT)
             self.iamrole = (response.read())
         except Exception:
             response = None
@@ -316,7 +317,7 @@ class S3Grabber(object):
 
         response = None
         try:
-            response = urllib2.urlopen(request)
+            response = urllib2.urlopen(request, timeout = DEFAULT_REQUEST_TIMEOUT)
             data = response.read()
         finally:
             if response:
