@@ -1,3 +1,6 @@
+## 1.3.2 (2019-02-05)
+- #5: Handle calls to http://169.254.169.254/ hanging when running on non-windows locally
+
 ## 1.3.0 (2019-01-28)
 - #2: Don't retry 404 errors
 
