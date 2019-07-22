@@ -37,6 +37,9 @@ rm -rf ${RPM_BUILD_ROOT}
 /usr/lib/yum-plugins/s3iam.py*
 
 %changelog
+* Mon July 22 2019 Ian Christian <ian.christian@bjss.com> 1.3.3-1
+- Adding in retries in case of IO exceptions when connecting to s3
+
 * Tue Feb 05 2019 Callum Massey <callum.massey@bjss.com> 1.3.2-1
 - Fix timeout when running on non-windows connecting to http://169.254.169.254/
 
