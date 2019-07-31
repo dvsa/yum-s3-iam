@@ -29,7 +29,6 @@ import yum.Errors
 import yum.plugins
 
 from yum.yumRepo import YumRepository
-from socket import error as socket_error
 
 __author__ = "Julius Seporaitis"
 __email__ = "julius@seporaitis.net"
@@ -364,7 +363,7 @@ class S3Grabber(object):
                     from urlgrabber.grabber import URLGrabError
                     msg = '%s on %s tried' % (e, url)
                     if self.retries > 0:
-                        msg += ' tried %d time(s)' % (self.retries)
+                        msg += ' tried %d time(s) failed by HTTPError' % (self.retries)
                         new_e = URLGrabError(14, msg)
                         new_e.code = e.code
                         new_e.exception = e
@@ -372,7 +371,7 @@ class S3Grabber(object):
                         raise new_e
             # error 104 and 110 sometimes being hit, which is a connection
             # level issue, we want to retry even in these situations.
-            except socket_error, e:
+            except urllib2.URLError, e:
                 if retries > 0:
                     time.sleep(delay)
                     delay *= self.backoff
@@ -381,7 +380,7 @@ class S3Grabber(object):
                     from urlgrabber.grabber import URLGrabError
                     msg = '%s on %s tried' % (e, url)
                     if self.retries > 0:
-                        msg += ' tried %d time(s)' % (self.retries)
+                        msg += ' tried %d time(s) - failed by URLError' % (self.retries)
                         new_e = URLGrabError(4, msg)
                         new_e.exception = e
                         new_e.url = url
