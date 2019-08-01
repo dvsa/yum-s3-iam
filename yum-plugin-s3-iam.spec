@@ -37,7 +37,7 @@ rm -rf ${RPM_BUILD_ROOT}
 /usr/lib/yum-plugins/s3iam.py*
 
 %changelog
-* Thr Aug 01 2019 Ian Christian <ian.christian@bjss.com> 1.3.3-2
+* Thu Aug 01 2019 Ian Christian <ian.christian@bjss.com> 1.3.3-2
 - Correcting exception caught to from socket error to URLError
 
 * Mon Jul 22 2019 Ian Christian <ian.christian@bjss.com> 1.3.3-1
